@@ -29,19 +29,6 @@ An AI-powered web application that recommends the most suitable crop based on so
 - Node.js
 - Express.js
 
-### Database
-- MySQL
-
-### Authentication
-- bcrypt
-
-### Other Tools
-- dotenv
-- mysql2
-- CORS
-- Nodemon
-
----
 
 ## 📂 Project Structure
 
@@ -71,140 +58,6 @@ AI-Powered-Crop-Recommendation-For-Farmers/
 │
 └── README.md
 ```
-
----
-
-## 🚀 Installation
-
-### 1️⃣ Clone the Repository
-
-```bash
-git clone https://github.com/reyasb/AI-Powered-Crop-Recommendation-For-Farmers.git
-```
-
-Go to the project folder.
-
-```bash
-cd AI-Powered-Crop-Recommendation-For-Farmers
-```
-
----
-
-### 2️⃣ Install Backend Dependencies
-
-```bash
-cd backend
-npm install
-```
-
----
-
-### 3️⃣ Configure Environment Variables
-
-Create a `.env` file inside the backend folder.
-
-```env
-PORT=5000
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=YOUR_PASSWORD
-DB_NAME=crop_recommendation
-```
-
----
-
-### 4️⃣ Create the Database
-
-Run the SQL script:
-
-```bash
-mysql -u root -p < schema.sql
-```
-
-Or execute `schema.sql` using MySQL Workbench.
-
----
-
-### 5️⃣ Start the Backend
-
-```bash
-npm run dev
-```
-
-The backend will start at:
-
-```
-http://localhost:5000
-```
-
----
-
-### 6️⃣ Open the Frontend
-
-Run the frontend using **VS Code Live Server** or any local web server.
-
----
-
-## 📡 API Endpoints
-
-### Authentication
-
-| Method | Endpoint | Description |
-|---------|----------|-------------|
-| POST | `/api/register` | Register a new user |
-| POST | `/api/login` | User Login |
-| GET | `/api/user/:id` | Get user profile |
-
----
-
-### Crop Recommendation
-
-| Method | Endpoint | Description |
-|---------|----------|-------------|
-| POST | `/api/recommendation` | Save recommendation |
-| GET | `/api/recommendations/:userId` | Get recommendation history |
-
----
-
-## 🗄️ Database
-
-### Users Table
-
-- id
-- full_name
-- email
-- password
-- created_at
-
-### Recommendations Table
-
-- id
-- user_id
-- soil_type
-- nitrogen
-- phosphorus
-- potassium
-- temperature
-- humidity
-- ph
-- rainfall
-- recommended_crop
-- created_at
-
----
-
-## 📸 Screenshots
-
-Add screenshots of:
-
-- Home Page
-- Login Page
-- Registration Page
-- Crop Recommendation Form
-- Recommendation Result
-- MySQL Database Tables
-
----
 
 ## 🔮 Future Enhancements
 
@@ -237,7 +90,7 @@ Add screenshots of:
 
 B.E. Computer Science and Engineering
 
-VSB Engineering College
+V.S.B Engineering College
 
 GitHub: https://github.com/reyasb
 
