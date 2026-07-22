@@ -4,7 +4,7 @@ const OpenAI = require("openai");
 require("dotenv").config();
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.static(__dirname));
@@ -62,7 +62,6 @@ Provide:
         console.log("\n========== OPENAI ERROR ==========");
         console.log("Status:", error.status);
         console.log("Message:", error.message);
-        console.log("Full Error:", error);
         console.log("==================================\n");
 
         res.status(500).json({
@@ -85,7 +84,6 @@ app.get("/test", async (req, res) => {
         console.log("\n========== TEST ERROR ==========");
         console.log("Status:", error.status);
         console.log("Message:", error.message);
-        console.log("Full Error:", error);
         console.log("================================\n");
 
         res.send("OpenAI API test failed.");
@@ -94,5 +92,5 @@ app.get("/test", async (req, res) => {
 
 // Start Server
 app.listen(PORT, () => {
-    console.log(`🚀 Server running at http://localhost:${PORT}`);
+    console.log(`🚀 Server running on port ${PORT}`);
 });
