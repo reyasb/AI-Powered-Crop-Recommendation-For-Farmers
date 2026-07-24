@@ -16,11 +16,12 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "bcryptjs": "^3.0.3",
+    "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
-    "mysql2": "^3.23.1"
+    "mysql2": "^3.23.1",
+    "openai": "^6.49.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
