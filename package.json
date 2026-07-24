@@ -1,29 +1,39 @@
 {
   "name": "farm-app",
   "version": "1.0.0",
-  "description": "",
-  "main": "jasc.js",
+  "description": "AI Powered Crop Recommendation for Farmers",
+  "main": "backend/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "ai",
+    "farming",
+    "crop-recommendation",
+    "express",
+    "mysql"
+  ],
+  "author": "Reyas B",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
+    "mysql2": "^3.23.1",
     "openai": "^6.45.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/reyasb/AI-Farming-Assistant.git"
+    "url": "git+https://github.com/reyasb/AI-Powered-Crop-Recommendation-For-Farmers.git"
   },
   "bugs": {
-    "url": "https://github.com/reyasb/AI-Farming-Assistant/issues"
+    "url": "https://github.com/reyasb/AI-Powered-Crop-Recommendation-For-Farmers/issues"
   },
-  "homepage": "https://github.com/reyasb/AI-Farming-Assistant#readme"
+  "homepage": "https://github.com/reyasb/AI-Powered-Crop-Recommendation-For-Farmers#readme"
 }

@@ -7,20 +7,19 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware
-app.use(express.static(__dirname));
 app.use(express.json());
+
+// Serve frontend files
+app.use(express.static(path.join(__dirname, "../")));
 
 // OpenAI Client
 const client = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY
 });
 
-// Check API Key
-console.log("API Key Loaded:", process.env.OPENAI_API_KEY ? "YES" : "NO");
-
 // Homepage
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "index.html"));
+    res.sendFile(path.join(__dirname, "../index.html"));
 });
 
 // AI Recommendation Route
@@ -59,10 +58,7 @@ Provide:
         });
 
     } catch (error) {
-        console.log("\n========== OPENAI ERROR ==========");
-        console.log("Status:", error.status);
-        console.log("Message:", error.message);
-        console.log("==================================\n");
+        console.error(error);
 
         res.status(500).json({
             recommendation: "AI recommendation could not be generated."
@@ -70,7 +66,7 @@ Provide:
     }
 });
 
-// API Test Route
+// Test Route
 app.get("/test", async (req, res) => {
     try {
         const response = await client.responses.create({
@@ -81,16 +77,17 @@ app.get("/test", async (req, res) => {
         res.send(response.output_text);
 
     } catch (error) {
-        console.log("\n========== TEST ERROR ==========");
-        console.log("Status:", error.status);
-        console.log("Message:", error.message);
-        console.log("================================\n");
-
-        res.send("OpenAI API test failed.");
+        console.error(error);
+        res.status(500).send("OpenAI API test failed.");
     }
 });
 
-// Start Server
-app.listen(PORT, () => {
-    console.log(`🚀 Server running on port ${PORT}`);
-});
+// Only listen when running locally
+if (!process.env.VERCEL) {
+    app.listen(PORT, () => {
+        console.log(`🚀 Server running on port ${PORT}`);
+    });
+}
+
+// Export app for Vercel
+module.exports = app;
