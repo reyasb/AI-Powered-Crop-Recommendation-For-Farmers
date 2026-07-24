@@ -19,9 +19,10 @@ async function loginUser(event) {
     });
     const result = await response.json();
     if (result.success) {
-        alert("Login Successful");
-        window.location.href = "dashboard.html";
-    } else {
+    alert("Login Successful");
+    window.location.href = "form.html";
+    }
+    else {
         alert(result.message);
     }
 }
